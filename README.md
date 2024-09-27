@@ -2,6 +2,8 @@
 - For my own prep. Feel free to use!
 - Works best with Mac OS, but feel free to adjust the code to fit your operating system
 
+  **TO DOWNLOAD: download casper_simulator.py and make sure you have the dependencies installed, then go ahead and run it!**
+
 ### DEPENDENCIES:
 1. Python 3.x with tkinter installed.
 2. FFmpeg installed and accessible via the system's PATH.

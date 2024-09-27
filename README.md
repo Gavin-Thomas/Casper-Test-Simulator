@@ -9,7 +9,7 @@
 2. FFmpeg installed and accessible via the system's PATH.
 3. Platform-specific adjustments if you plan to run the application on operating systems other than macOS.
 
-### ENJOY! PHOTOS BELOW...
+quick format...
 - 10 sections written (1 min read q, 5 min for answer, 1 min break)
 - 3 sections video (1 min read, 1 min video answer, 1 min break)
   

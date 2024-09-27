@@ -15,19 +15,19 @@ quick format...
   
 **Start Screen**
 
-![one](https://github.com/Gavin-Thomas/Casper-Test-Simulator/blob/main/Screenshot%202024-09-26%20at%209.33.39%20PM.png?raw=true)
+![one](https://github.com/gt-in-canada/Casper-Test-Simulator/blob/main/Screenshot%202024-09-26%20at%209.33.39%20PM.png?raw=true)
 
 **Scenario**
 
-![two](https://github.com/Gavin-Thomas/Casper-Test-Simulator/blob/main/Screenshot%202024-09-26%20at%209.34.06%20PM.png?raw=true)
+![two](https://github.com/gt-in-canada/Casper-Test-Simulator/blob/main/Screenshot%202024-09-26%20at%209.34.06%20PM.png?raw=true)
 
 **Questions**
 
-![three](https://github.com/Gavin-Thomas/Casper-Test-Simulator/blob/main/Screenshot%202024-09-26%20at%209.34.20%20PM.png?raw=true)
+![three](https://github.com/gt-in-canada/Casper-Test-Simulator/blob/main/Screenshot%202024-09-26%20at%209.34.20%20PM.png?raw=true)
 
 **Review Section**
 
-![four](https://github.com/Gavin-Thomas/Casper-Test-Simulator/blob/main/Screenshot%202024-09-26%20at%209.35.12%20PM.png?raw=true)
+![four](https://github.com/gt-in-canada/Casper-Test-Simulator/blob/main/Screenshot%202024-09-26%20at%209.35.12%20PM.png?raw=true)
 
 
 

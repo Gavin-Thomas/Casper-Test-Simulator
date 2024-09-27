@@ -554,7 +554,9 @@ scenarios = [
     }
 ]
 
-selected_scenarios = random.sample(scenarios, 13)
+selected_scenarios = random.sample(scenarios, 14)
+
+# --------------------------------------------------------------------------------------------
 
 class CasperTestSimulator:
     def __init__(self, master):
@@ -573,6 +575,9 @@ class CasperTestSimulator:
         # Device indices
         self.video_device_index = None
         self.audio_device_index = None
+
+        # Keep track of breaks taken
+        self.breaks_taken = set()
 
         self.create_start_screen()
 
@@ -654,6 +659,8 @@ class CasperTestSimulator:
             messagebox.showwarning("Warning", "Device indices not set. Please set up your devices before starting.")
             return
         self.all_answers = []
+        self.current_scenario_index = 0  # Reset the scenario index
+        self.breaks_taken = set()  # Reset the breaks taken
         self.next_scenario()
 
     def next_scenario(self):
@@ -661,11 +668,18 @@ class CasperTestSimulator:
             self.show_results()
             return
 
-        # Determine if the current scenario is a written or video response
-        if self.current_scenario_index < 10:
-            self.show_scenario_written()
+        # Check if it's time for a 5-minute break
+        if self.current_scenario_index in [6, 10] and self.current_scenario_index not in self.breaks_taken:
+            # Time for a 5-minute break
+            self.breaks_taken.add(self.current_scenario_index)
+            self.time_left = 300  # 5 minutes
+            self.show_break_screen()
         else:
-            self.show_scenario_video()
+            # Determine if current scenario is a video or written response
+            if self.current_scenario_index < 6:
+                self.show_scenario_video()
+            else:
+                self.show_scenario_written()
 
     # ------------------ Written Response Methods ------------------
 
@@ -723,8 +737,7 @@ class CasperTestSimulator:
             'answers': answers
         })
         self.current_scenario_index += 1
-        self.time_left = 60  # 1 minute break
-        self.show_break_screen()
+        self.next_scenario()
 
     def end_question_period_written(self):
         self.next_button.config(state=tk.DISABLED)
@@ -817,7 +830,6 @@ class CasperTestSimulator:
             messagebox.showerror("Error", f"Failed to start video recording: {e}")
             self.end_video_recording()
 
-
     def check_ffmpeg_process(self):
         if self.ffmpeg_process.poll() is not None:
             # Process has exited
@@ -844,8 +856,7 @@ class CasperTestSimulator:
             'video': self.video_filename
         })
         self.current_scenario_index += 1
-        self.time_left = 60  # 1 minute break
-        self.show_break_screen()
+        self.next_scenario()
 
     # ------------------ Common Methods ------------------
 
@@ -854,12 +865,15 @@ class CasperTestSimulator:
         break_label = tk.Label(self.master, text="Break Time! Next scenario will start soon.", font=('Helvetica', 16))
         break_label.pack(expand=True)
 
-        self.next_button = tk.Button(self.master, text="Next", command=self.next_scenario, font=('Helvetica', 14))
+        self.next_button = tk.Button(self.master, text="Next", command=self.end_break, font=('Helvetica', 14))
         self.next_button.pack(side='right', padx=20, pady=10)
 
-        self.time_left = 60  # 1 minute break
         self.update_timer_label()
         self.start_timer(self.next_scenario)
+
+    def end_break(self):
+        self.stop_timer()
+        self.next_scenario()
 
     def show_results(self):
         self.clear_screen()
@@ -941,3 +955,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

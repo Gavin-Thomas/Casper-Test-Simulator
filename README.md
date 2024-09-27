@@ -11,13 +11,20 @@
 - 10 sections written (1 min read q, 5 min for answer, 1 min break)
 - 3 sections video (1 min read, 1 min video answer, 1 min break)
   
-**start screen**
+**Start Screen**
+
 ![one](https://github.com/Gavin-Thomas/Casper-Test-Simulator/blob/main/Screenshot%202024-09-26%20at%209.33.39%20PM.png?raw=true)
-**example scenario**
+
+**Scenario**
+
 ![two](https://github.com/Gavin-Thomas/Casper-Test-Simulator/blob/main/Screenshot%202024-09-26%20at%209.34.06%20PM.png?raw=true)
-**example questions**
+
+**Questions**
+
 ![three](https://github.com/Gavin-Thomas/Casper-Test-Simulator/blob/main/Screenshot%202024-09-26%20at%209.34.20%20PM.png?raw=true)
-**example review section**
+
+**Review Section**
+
 ![four](https://github.com/Gavin-Thomas/Casper-Test-Simulator/blob/main/Screenshot%202024-09-26%20at%209.35.12%20PM.png?raw=true)
 
 
